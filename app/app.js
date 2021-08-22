@@ -151,7 +151,7 @@ function showFinishPage(imageName) {
   const figure = document.createElement("figure");
   const image = document.createElement("img");
 
-  image.src = `./images/${imageName}.jpg`;
+  image.src = `../images/${imageName}.jpg`;
   figure.appendChild(image);
   $finishPage.appendChild(figure);
   $cardContainer.classList.add(HIDDEN_CLASS_NAME);
