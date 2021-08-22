@@ -123,3 +123,16 @@ main {
 .hidden {
   display: none !important;
 }
+
+@media (max-width: 960px) {
+  #card__container {
+    margin-top: 2rem;
+    width: 450px;
+    height: 500px;
+  }
+  #finish-page img {
+    width: 100%;
+    max-height: unset;
+    min-width: unset;
+  }
+}
