@@ -36,19 +36,19 @@ function stopAudio(audioName) {
   $audio.pause();
 }
 
+function shuffleCard(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 function createFrontImage(i) {
   const $image = document.createElement("img");
   $image.src = `./images/image__${i}.jpg`;
   $image.dataset.cardNum = i;
   $image.classList.add("front");
   return $image;
-}
-
-function shuffleCard(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
 }
 
 function pushFrontImages() {
