@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>야인시대 인물 맞추기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Gugi&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script defer src="./app/app.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <h1 id="header__heading--1">야인시대 인물 맞추기</h1>
+      <button id="start-btn" class="btn">시작</button>
+      <button id="restart-btn" class="btn hidden">재시작</button>
+      <div id="info" class="hidden">
+        <h2 id="info__time-left">남은시간: 30</h2>
+        <h2 id="info__people-left">남은 야인: 8</h2>
+      </div>
+    </header>
+    <main id="main">
+      <div id="main__container">
+        <div class="main__image-container">
+          <img id="main-image" src="./images/main.jpg" />
+        </div>
+      </div>
+      <div id="card__container" class="hidden grid">
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+        <figure class="card"></figure>
+      </div>
+      <div id="finish-page" class="hidden"></div>
+    </main>
+
+    <audio src="./audios/opening.mp3" data-audio="opening"></audio>
+    <audio src="./audios/what.mp3" data-audio="wrong"></audio>
+    <audio src="./audios/matched.mp3" data-audio="right"></audio>
+    <audio src="./audios/success.mp3" data-audio="success"></audio>
+    <audio src="./audios/fail.mp3" data-audio="fail"></audio>
+  </body>
+</html>
