@@ -47,9 +47,7 @@ function createFrontImage(i) {
 function shuffleCard(array) {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
-    let temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
+    [array[i], array[j]] = [array[j], array[i]];
   }
 }
 
@@ -175,6 +173,7 @@ function handle_Re_StartBtn() {
 
   $cardContainer.classList.add(HIDDEN_CLASS_NAME);
   $finishPage.classList.add(HIDDEN_CLASS_NAME);
+  $finishPage.innerHTML = "";
   $reStartBtn.classList.add(HIDDEN_CLASS_NAME);
   $info.classList.add(HIDDEN_CLASS_NAME);
   $startBtn.classList.remove(HIDDEN_CLASS_NAME);
