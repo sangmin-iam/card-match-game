@@ -38,7 +38,7 @@ function stopAudio(audioName) {
 
 function createFrontImage(i) {
   const $image = document.createElement("img");
-  $image.src = `/images/image__${i}.jpg`;
+  $image.src = `./images/image__${i}.jpg`;
   $image.dataset.cardNum = i;
   $image.classList.add("front");
   return $image;
