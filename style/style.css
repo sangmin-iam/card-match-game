@@ -79,7 +79,7 @@ main {
   position: relative;
   width: 100%;
   max-height: 15rem;
-  background-image: url("/images/back.jpg");
+  background-image: url("../images/back.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
 }
