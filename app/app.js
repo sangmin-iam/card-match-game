@@ -132,15 +132,15 @@ function finishGame(game) {
   clearTimeout(timer);
 
   if (game === "fail") {
-    playAudio("fail");
     stopAudio("opening");
+    playAudio("fail");
 
     showFinishPage("fail");
 
     return;
   }
-  playAudio("success");
   stopAudio("opening");
+  playAudio("success");
 
   showFinishPage("success");
 }
