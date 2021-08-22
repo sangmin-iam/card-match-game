@@ -95,26 +95,33 @@ function startTimer() {
 
 function handleGuess(e) {
   const clickedCard = e.target.closest("figure");
-  if (!clickedCard) return;
+  if (!clickedCard || clickedCard.firstChild.classList.contains("correct"))
+    return;
   const frontImage = clickedCard.firstChild;
   frontImage.classList.add(SHOW_CLASS_NAME);
-  clickedCount += 1;
   clickedTwoCards.push(frontImage);
+  clickedCount += 1;
 }
 
 function handleMatch() {
   if (clickedCount === 2) {
-    if (
+    const isMatched =
       clickedTwoCards[0].dataset?.cardNum ===
         clickedTwoCards[1].dataset?.cardNum &&
       clickedTwoCards[0] !== clickedTwoCards[1] &&
-      clickedTwoCards.length === 2
-    ) {
+      clickedTwoCards.length === 2;
+    if (isMatched) {
+      clickedTwoCards.map((card) => {
+        card.classList.add("correct");
+      });
+
       clickedTwoCards = [];
       clickedCount = 0;
       peopleLeft -= 1;
       $infoPeopleLeft.textContent = `남은 야인: ${peopleLeft}`;
+
       playAudio("right");
+
       return;
     }
     setTimeout(function () {
@@ -157,15 +164,16 @@ function showFinishPage(imageName) {
 }
 
 function handle_Re_StartBtn() {
-  clearTimeout(timer);
-  stopAudio("opening");
-  stopAudio("success");
-  stopAudio("fail");
   clickedCount = 0;
   timeLeft = 30;
   peopleLeft = 8;
   frontCards = [];
   tracking = [];
+
+  clearTimeout(timer);
+  stopAudio("opening");
+  stopAudio("success");
+  stopAudio("fail");
 
   $cards.map((element) => {
     element.innerHTML = "";
